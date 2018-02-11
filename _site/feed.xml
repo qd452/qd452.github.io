@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-12T02:40:19+08:00</updated><id>http://localhost:4000/</id><title type="html">DoNG’s Tech Blog</title><subtitle>Do Not Give-up!   O ever youthful, O ever weeping!  Stay Hungry! Stay Foolish! </subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-02-11T21:39:40+08:00</published><updated>2018-02-11T21:39:40+08:00</updated><id>http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Macbook Setup</title><link href="http://localhost:4000/macbook/mbp/journal/tech/setup/2018/02/10/MacBook-Setup.html" rel="alternate" type="text/html" title="Macbook Setup" /><published>2018-02-10T14:39:40+08:00</published><updated>2018-02-10T14:39:40+08:00</updated><id>http://localhost:4000/macbook/mbp/journal/tech/setup/2018/02/10/MacBook-Setup</id><content type="html" xml:base="http://localhost:4000/macbook/mbp/journal/tech/setup/2018/02/10/MacBook-Setup.html">&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
+
+&lt;ul class=&quot;no_toc&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot; id=&quot;markdown-toc-table-of-contents&quot;&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#0-basic-setup&quot; id=&quot;markdown-toc-0-basic-setup&quot;&gt;0. Basic Setup&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#badassify-your-ternimal-and-shell-todo&quot; id=&quot;markdown-toc-badassify-your-ternimal-and-shell-todo&quot;&gt;Badassify your ternimal and shell [todo]&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#05-setting-up-github-page&quot; id=&quot;markdown-toc-05-setting-up-github-page&quot;&gt;0.5 Setting up Github Page&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#installing-and-get-started-with-jekyll&quot; id=&quot;markdown-toc-installing-and-get-started-with-jekyll&quot;&gt;Installing and Get Started with Jekyll&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#requirement-for-jekyll&quot; id=&quot;markdown-toc-requirement-for-jekyll&quot;&gt;Requirement for Jekyll&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#1-update-ruby&quot; id=&quot;markdown-toc-1-update-ruby&quot;&gt;1. Update Ruby&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#2-update-rubygems&quot; id=&quot;markdown-toc-2-update-rubygems&quot;&gt;2. Update RubyGems&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#install-jekyll&quot; id=&quot;markdown-toc-install-jekyll&quot;&gt;Install Jekyll&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#markdown-renderer-todo&quot; id=&quot;markdown-toc-markdown-renderer-todo&quot;&gt;Markdown Renderer [todo]&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#red-carpet&quot; id=&quot;markdown-toc-red-carpet&quot;&gt;Red Carpet&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#06-shell-text-editor-todo&quot; id=&quot;markdown-toc-06-shell-text-editor-todo&quot;&gt;0.6 Shell Text Editor [todo]&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#i-use-nano-for-the-moment&quot; id=&quot;markdown-toc-i-use-nano-for-the-moment&quot;&gt;I use nano for the moment..&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-make-ipython-console-available-in-pycharm-todo&quot; id=&quot;markdown-toc-1-make-ipython-console-available-in-pycharm-todo&quot;&gt;1. Make IPython console Available in Pycharm [todo]&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-building-my-old-django-blog-in-the-server&quot; id=&quot;markdown-toc-2-building-my-old-django-blog-in-the-server&quot;&gt;2. Building my Old Django Blog in the server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-setting-up-the-virtual-environment-for-python-virtualenv&quot; id=&quot;markdown-toc-3-setting-up-the-virtual-environment-for-python-virtualenv&quot;&gt;3. Setting Up the Virtual Environment for Python (virtualenv)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-using-the-virtualenv-to-build-a-django-app-with-tinymce&quot; id=&quot;markdown-toc-4-using-the-virtualenv-to-build-a-django-app-with-tinymce&quot;&gt;4. Using the Virtualenv to Build a Django APP with tinymce&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;0-basic-setup&quot;&gt;0. Basic Setup&lt;/h2&gt;
+
+&lt;h3 id=&quot;badassify-your-ternimal-and-shell-todo&quot;&gt;Badassify your ternimal and shell [todo]&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;http://jilles.me/badassify-your-terminal-and-shell&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;05-setting-up-github-page&quot;&gt;0.5 Setting up Github Page&lt;/h2&gt;
+
+&lt;h3 id=&quot;installing-and-get-started-with-jekyll&quot;&gt;Installing and Get Started with Jekyll&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;https://jekyllrb.com/docs/quickstart/
+for my infor about &lt;strong&gt;kramdown&lt;/strong&gt;: https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;requirement-for-jekyll&quot;&gt;Requirement for Jekyll&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;https://stackoverflow.com/questions/38194032/how-to-update-ruby-version-2-0-0-to-the-latest-version-in-mac-osx-yosemite
+https://rubygems.org/pages/download
+https://jekyllrb.com/docs/installation/#requirements&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;1-update-ruby&quot;&gt;1. Update Ruby&lt;/h5&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rvm list known&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rvm install ruby-2.5.0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt; will give you &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby 2.5.0p0 (2017-12-25 revision 61468) [x86_64-darwin16]&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;2-update-rubygems&quot;&gt;2. Update RubyGems&lt;/h5&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gem update --system&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gem -v&lt;/code&gt; will give you &lt;code class=&quot;highlighter-rouge&quot;&gt;2.7.5&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;install-jekyll&quot;&gt;Install Jekyll&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;https://jekyllrb.com/docs/quickstart/
+https://jekyllrb.com/docs/installation/#requirements&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll bundle&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;markdown-renderer-todo&quot;&gt;Markdown Renderer [todo]&lt;/h4&gt;
+
+&lt;p&gt;Defualt: &lt;code class=&quot;highlighter-rouge&quot;&gt;markdown:    kramdown&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;https://kramdown.gettalong.org/converter/html.html&lt;/p&gt;
+
+&lt;h5 id=&quot;red-carpet&quot;&gt;Red Carpet&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;https://jekyllrb.com/docs/configuration/#markdown-options&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;06-shell-text-editor-todo&quot;&gt;0.6 Shell Text Editor [todo]&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;nano, Emacs &amp;amp; Vim&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;i-use-nano-for-the-moment&quot;&gt;I use nano for the moment..&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;https://wiki.gentoo.org/wiki/Nano&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It seems that using nano paste in Mac is not straightforward enough
+https://apple.stackexchange.com/questions/110793/how-to-copy-and-paste-lines-in-nano-on-osx&lt;/p&gt;
+
+&lt;p&gt;To move the cursor to the line-start and line-end: use &lt;code class=&quot;highlighter-rouge&quot;&gt;control+a&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;control+e&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;line start: &lt;code class=&quot;highlighter-rouge&quot;&gt;^+a&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;line end: &lt;code class=&quot;highlighter-rouge&quot;&gt;^+e&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-make-ipython-console-available-in-pycharm-todo&quot;&gt;1. Make IPython console Available in Pycharm [todo]&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;https://www.jetbrains.com/help/pycharm/scientific-tools.html
+http://jupyter.org/&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-building-my-old-django-blog-in-the-server&quot;&gt;2. Building my Old Django Blog in the server&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Important: the server I use to deploy is &lt;code class=&quot;highlighter-rouge&quot;&gt;HeroKu&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Email I use to register is u0905217@gmail.com&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I used the qudong452@gmail.com, but I forgot the pwd and now cannot log-in&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-setting-up-the-virtual-environment-for-python-virtualenv&quot;&gt;3. Setting Up the Virtual Environment for Python (virtualenv)&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;http://django-tinymce.readthedocs.io/en/latest/installation.html#prerequisites&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;navigate to Documents/&lt;/li&gt;
+  &lt;li&gt;in bash: type &lt;code class=&quot;highlighter-rouge&quot;&gt;mkdir tinymce_test&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ls tinymce_test&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;after we are in the project dir&lt;/li&gt;
+  &lt;li&gt;build the virtualenv in this project&lt;/li&gt;
+  &lt;li&gt;by typing &lt;code class=&quot;highlighter-rouge&quot;&gt;virtualenv --no-site-packages env&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;it will show: &lt;code class=&quot;highlighter-rouge&quot;&gt;Using base prefix '/usr/local/Cellar/python3/3.6.4_2/Frameworks/Python.framework/Versions/3.6'
+New python executable in /Users/qudong/env/bin/python3.6
+Also creating executable in /Users/qudong/env/bin/python
+Installing setuptools, pip, wheel...done.&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;4-using-the-virtualenv-to-build-a-django-app-with-tinymce&quot;&gt;4. Using the Virtualenv to Build a Django APP with tinymce&lt;/h2&gt;</content><author><name></name></author><summary type="html">Table of Contents</summary></entry></feed>
