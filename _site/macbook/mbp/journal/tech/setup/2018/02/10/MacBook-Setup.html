@@ -18,7 +18,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-02-10T14:39:40+08:00" />
 <script type="application/ld+json">
-{"headline":"Macbook Setup","dateModified":"2018-02-10T14:39:40+08:00","datePublished":"2018-02-10T14:39:40+08:00","url":"http://localhost:4000/macbook/mbp/journal/tech/setup/2018/02/10/MacBook-Setup.html","description":"Table of Contents","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/macbook/mbp/journal/tech/setup/2018/02/10/MacBook-Setup.html"},"@context":"http://schema.org"}</script>
+{"headline":"Macbook Setup","dateModified":"2018-02-10T14:39:40+08:00","datePublished":"2018-02-10T14:39:40+08:00","url":"http://localhost:4000/macbook/mbp/journal/tech/setup/2018/02/10/MacBook-Setup.html","description":"Table of Contents","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/macbook/mbp/journal/tech/setup/2018/02/10/MacBook-Setup.html"},"@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -113,6 +113,7 @@
           </li>
         </ul>
       </li>
+      <li><a href="#using-template" id="markdown-toc-using-template">Using Template</a></li>
     </ul>
   </li>
   <li><a href="#06-shell-text-editor-todo" id="markdown-toc-06-shell-text-editor-todo">0.6 Shell Text Editor [todo]</a></li>
@@ -166,7 +167,7 @@ https://jekyllrb.com/docs/installation/#requirements</p>
 <h4 id="install-jekyll">Install Jekyll</h4>
 
 <blockquote>
-  <p>https://jekyllrb.com/docs/quickstart/
+  <p><a href="https://jekyllrb.com/docs/quickstart/">https://jekyllrb.com/docs/quickstart/</a>
 https://jekyllrb.com/docs/installation/#requirements</p>
 </blockquote>
 
@@ -187,6 +188,22 @@ https://jekyllrb.com/docs/installation/#requirements</p>
 <blockquote>
   <p>https://jekyllrb.com/docs/configuration/#markdown-options</p>
 </blockquote>
+
+<h3 id="using-template">Using Template</h3>
+
+<ol>
+  <li>included gem jekyll-theme-cayman in my Gemfile, and comment <code class="highlighter-rouge">gem "minima", "~&gt; 2.0"</code>
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">gem</span> <span class="s2">"jekyll-theme-cayman"</span><span class="p">,</span> <span class="ss">group: :jekyll_plugins</span>
+</code></pre></div>    </div>
+  </li>
+  <li>ran <code class="highlighter-rouge">bundle install</code></li>
+  <li>To upgrade, run <code class="highlighter-rouge">bundle update github-pages</code></li>
+  <li>included theme: jekyll-theme-cayman in _config.yml
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> theme: jekyll-theme-cayman
+</code></pre></div>    </div>
+  </li>
+  <li>ran <code class="highlighter-rouge">bundle exec jekyll serve</code> which results in the following:</li>
+</ol>
 
 <h2 id="06-shell-text-editor-todo">0.6 Shell Text Editor [todo]</h2>
 

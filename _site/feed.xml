@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-12T02:52:28+08:00</updated><id>http://localhost:4000/</id><title type="html">DoNG’s Tech Blog</title><subtitle>Do Not Give-up!   O ever youthful, O ever weeping!  Stay Hungry! Stay Foolish! </subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-02-11T21:39:40+08:00</published><updated>2018-02-11T21:39:40+08:00</updated><id>http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-12T04:01:49+08:00</updated><id>http://localhost:4000/</id><title type="html">DoNG’s Tech Blog</title><subtitle>Do Not Give-up!   O ever youthful, O ever weeping!  Stay Hungry! Stay Foolish! </subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-02-11T21:39:40+08:00</published><updated>2018-02-11T21:39:40+08:00</updated><id>http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
@@ -33,6 +33,7 @@
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#using-template&quot; id=&quot;markdown-toc-using-template&quot;&gt;Using Template&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#06-shell-text-editor-todo&quot; id=&quot;markdown-toc-06-shell-text-editor-todo&quot;&gt;0.6 Shell Text Editor [todo]&lt;/a&gt;&lt;/li&gt;
@@ -86,7 +87,7 @@ https://jekyllrb.com/docs/installation/#requirements&lt;/p&gt;
 &lt;h4 id=&quot;install-jekyll&quot;&gt;Install Jekyll&lt;/h4&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;https://jekyllrb.com/docs/quickstart/
+  &lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/quickstart/&quot;&gt;https://jekyllrb.com/docs/quickstart/&lt;/a&gt;
 https://jekyllrb.com/docs/installation/#requirements&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -107,6 +108,22 @@ https://jekyllrb.com/docs/installation/#requirements&lt;/p&gt;
 &lt;blockquote&gt;
   &lt;p&gt;https://jekyllrb.com/docs/configuration/#markdown-options&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;h3 id=&quot;using-template&quot;&gt;Using Template&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;included gem jekyll-theme-cayman in my Gemfile, and comment &lt;code class=&quot;highlighter-rouge&quot;&gt;gem &quot;minima&quot;, &quot;~&amp;gt; 2.0&quot;&lt;/code&gt;
+    &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll-theme-cayman&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;group: :jekyll_plugins&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ran &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;To upgrade, run &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle update github-pages&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;included theme: jekyll-theme-cayman in _config.yml
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; theme: jekyll-theme-cayman
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ran &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt; which results in the following:&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;06-shell-text-editor-todo&quot;&gt;0.6 Shell Text Editor [todo]&lt;/h2&gt;
 

@@ -46,7 +46,7 @@ categories: macbook mbp journal tech setup
 
 #### Install Jekyll
 
-> https://jekyllrb.com/docs/quickstart/
+> <https://jekyllrb.com/docs/quickstart/>
 > https://jekyllrb.com/docs/installation/#requirements
 
 **`gem install jekyll bundle`**
@@ -64,6 +64,22 @@ https://kramdown.gettalong.org/converter/html.html
 ##### Red Carpet
 
 > https://jekyllrb.com/docs/configuration/#markdown-options
+
+### Using Template
+
+[todo-qd]: <https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site/>
+
+1. included gem jekyll-theme-cayman in my Gemfile, and comment `gem "minima", "~> 2.0"`
+    ```ruby
+    gem "jekyll-theme-cayman", group: :jekyll_plugins
+    ```
+2. ran `bundle install`
+3. To upgrade, run `bundle update github-pages`
+3. included theme: jekyll-theme-cayman in _config.yml
+    ```
+    theme: jekyll-theme-cayman
+    ```
+4. ran `bundle exec jekyll serve` which results in the following:
 
 
 ## 0.6 Shell Text Editor [todo]
