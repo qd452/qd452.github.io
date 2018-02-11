@@ -16,7 +16,7 @@ categories: macbook mbp journal tech setup
 
 ### Badassify your ternimal and shell [todo]
 
-> http://jilles.me/badassify-your-terminal-and-shell
+> <http://jilles.me/badassify-your-terminal-and-shell>
 
 
 ## 0.5 Setting up Github Page
@@ -56,6 +56,10 @@ categories: macbook mbp journal tech setup
 Defualt: `markdown:    kramdown`
 
 https://kramdown.gettalong.org/converter/html.html
+
+##### Auto link in `kramdown`
+
+<https://kramdown.gettalong.org/syntax.html#automatic-links>
 
 ##### Red Carpet
 
