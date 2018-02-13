@@ -125,3 +125,11 @@ In singly linked list, to delete a node, pointer to the previous node is needed.
 
 todo-qd: for next, implementation of DLL (doubly linked list) in C and Python
 https://www.geeksforgeeks.org/doubly-linked-list/
+
+
+
+
+
+
+
+[back](../)

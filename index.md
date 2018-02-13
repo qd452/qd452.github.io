@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Blog
+# Tech Journal
 
 [2018-01-26-my_algo_rebrush_schedule](posts/2018-01-26-my_algo_rebrush_schedule)
 
