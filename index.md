@@ -1,6 +1,12 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+layout: default
 ---
+
+# Blog
+
+[2018-01-26-my_algo_rebrush_schedule](posts/2018-01-26-my_algo_rebrush_schedule)
+
+[2018-02-11-MacBook-Setup](posts/2018-02-11-MacBook-Setup)
+
+
+

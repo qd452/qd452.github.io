@@ -69,10 +69,11 @@ https://kramdown.gettalong.org/converter/html.html
 
 [todo-qd]: <https://help.github.com/articles/adding-a-jekyll-theme-to-your-github-pages-site/>
 
-1. included gem jekyll-theme-cayman in my Gemfile, and comment `gem "minima", "~> 2.0"`
+1. ncluded gem jekyll-theme-cayman in my Gemfile, and comment `gem "minima", "~> 2.0"`
     ```ruby
     gem "jekyll-theme-cayman", group: :jekyll_plugins
     ```
+1. In Gemfile, just added the line `source 'https//rubygems.org`
 2. ran `bundle install`
 3. To upgrade, run `bundle update github-pages`
 3. included theme: jekyll-theme-cayman in _config.yml
