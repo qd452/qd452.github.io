@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-12T04:01:49+08:00</updated><id>http://localhost:4000/</id><title type="html">DoNG’s Tech Blog</title><subtitle>Do Not Give-up!   O ever youthful, O ever weeping!  Stay Hungry! Stay Foolish! </subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-02-11T21:39:40+08:00</published><updated>2018-02-11T21:39:40+08:00</updated><id>http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-13T08:00:08+08:00</updated><id>http://localhost:4000/</id><title type="html">DoNG’s Tech Blog</title><subtitle>Do Not Give-up!   O ever youthful, O ever weeping!  Stay Hungry! Stay Foolish! </subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-02-11T21:39:40+08:00</published><updated>2018-02-11T21:39:40+08:00</updated><id>http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/02/11/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
@@ -183,4 +183,171 @@ Installing setuptools, pip, wheel...done.&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;4-using-the-virtualenv-to-build-a-django-app-with-tinymce&quot;&gt;4. Using the Virtualenv to Build a Django APP with tinymce&lt;/h2&gt;</content><author><name></name></author><summary type="html">Table of Contents</summary></entry></feed>
+&lt;h2 id=&quot;4-using-the-virtualenv-to-build-a-django-app-with-tinymce&quot;&gt;4. Using the Virtualenv to Build a Django APP with tinymce&lt;/h2&gt;</content><author><name></name></author><summary type="html">Table of Contents</summary></entry><entry><title type="html">My Algo Rebrush Schedule</title><link href="http://localhost:4000/algo/python/deque/bst/2018/01/26/my_algo_rebrush_schedule.html" rel="alternate" type="text/html" title="My Algo Rebrush Schedule" /><published>2018-01-26T07:39:40+08:00</published><updated>2018-01-26T07:39:40+08:00</updated><id>http://localhost:4000/algo/python/deque/bst/2018/01/26/my_algo_rebrush_schedule</id><content type="html" xml:base="http://localhost:4000/algo/python/deque/bst/2018/01/26/my_algo_rebrush_schedule.html">&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
+
+&lt;ul class=&quot;no_toc&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot; id=&quot;markdown-toc-table-of-contents&quot;&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2018-01-26-fri-bst&quot; id=&quot;markdown-toc-2018-01-26-fri-bst&quot;&gt;2018-01-26 Fri: BST&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2018-01-27-sat-deque-pronounced-as-deck&quot; id=&quot;markdown-toc-2018-01-27-sat-deque-pronounced-as-deck&quot;&gt;2018-01-27 Sat: deque (pronounced as “deck”)&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#all-about-python-time-complexity&quot; id=&quot;markdown-toc-all-about-python-time-complexity&quot;&gt;All about Python Time Complexity&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#sidetrack&quot; id=&quot;markdown-toc-sidetrack&quot;&gt;Sidetrack&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cpython-deque&quot; id=&quot;markdown-toc-cpython-deque&quot;&gt;CPython deque&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#how-are-deques-in-python-implemented-and-when-are-they-worse-than-lists&quot; id=&quot;markdown-toc-how-are-deques-in-python-implemented-and-when-are-they-worse-than-lists&quot;&gt;&lt;strong&gt;How are deques in Python implemented, and when are they worse than lists?&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2018-01-30-tue-singly--doubly-linked-list&quot; id=&quot;markdown-toc-2018-01-30-tue-singly--doubly-linked-list&quot;&gt;2018-01-30 Tue: Singly &amp;amp; Doubly Linked List&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#continue-the-c-implementation-for-collectionsdeque&quot; id=&quot;markdown-toc-continue-the-c-implementation-for-collectionsdeque&quot;&gt;Continue the C-implementation for &lt;code class=&quot;highlighter-rouge&quot;&gt;collections.deque&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#singly-and-doubly&quot; id=&quot;markdown-toc-singly-and-doubly&quot;&gt;Singly and Doubly&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#todo-qd-read-through&quot; id=&quot;markdown-toc-todo-qd-read-through&quot;&gt;todo-qd: Read Through&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#comparison-between-doubly--singly&quot; id=&quot;markdown-toc-comparison-between-doubly--singly&quot;&gt;Comparison between Doubly &amp;amp; Singly&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#my-understanding-from-the-answers&quot; id=&quot;markdown-toc-my-understanding-from-the-answers&quot;&gt;My Understanding from the answers:&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#more-comparison-from-g4g&quot; id=&quot;markdown-toc-more-comparison-from-g4g&quot;&gt;More Comparison from G4G&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#comparison-between-singly-ll-and-array-from-g4g&quot; id=&quot;markdown-toc-comparison-between-singly-ll-and-array-from-g4g&quot;&gt;Comparison between Singly LL and Array (from G4G)&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#all-about-ll-geeksforgeeks-linked-list&quot; id=&quot;markdown-toc-all-about-ll-geeksforgeeks-linked-list&quot;&gt;All about LL (GeeksforGeeks Linked List)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2018-01-26-fri-bst&quot;&gt;2018-01-26 Fri: BST&lt;/h2&gt;
+
+&lt;p&gt;briefly looked through the implementation of &lt;a href=&quot;https://github.com/qd452/Algorithm4/blob/master/PyAlgo4/src/bst.py&quot;&gt;BST&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Until Line 94:
+    1. construct a BST ( recursively)
+    2. in-order traversal &amp;amp; pre-order traversal recursively
+    3. in-order traversal without recursion, using stack&lt;/p&gt;
+
+&lt;h2 id=&quot;2018-01-27-sat-deque-pronounced-as-deck&quot;&gt;2018-01-27 Sat: deque (pronounced as “deck”)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://chimera.labs.oreilly.com/books/1230000000393/ch01.html#_problem_3&quot;&gt;Keeping the last N items&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;\PyAlgo4\src\deque_application.py&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;all-about-python-time-complexity&quot;&gt;All about Python Time Complexity&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://wiki.python.org/moin/TimeComplexity&lt;/li&gt;
+  &lt;li&gt;https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sidetrack&quot;&gt;Sidetrack&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://stackoverflow.com/questions/48126428/how-to-make-the-inverse-of-a-linear-function/48472357#48472357&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cpython-deque&quot;&gt;CPython deque&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Python2.7&lt;/strong&gt;: https://github.com/python/cpython/blob/2.7/Lib/collections.py&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Python3.6&lt;/strong&gt;: https://github.com/python/cpython/blob/3.6/Lib/collections/&lt;strong&gt;init&lt;/strong&gt;.py&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;extensive reading [todo-qd]: https://docs.python.org/3/library/collections.abc.html#module-collections.abc&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;how-are-deques-in-python-implemented-and-when-are-they-worse-than-lists&quot;&gt;&lt;strong&gt;&lt;a href=&quot;https://stackoverflow.com/questions/6256983/how-are-deques-in-python-implemented-and-when-are-they-worse-than-lists/6257048#6257048&quot;&gt;How are deques in Python implemented, and when are they worse than lists?&lt;/a&gt;&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;https://hg.python.org/cpython/file/3.5/Modules/_collectionsmodule.c&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A &lt;code class=&quot;highlighter-rouge&quot;&gt;dequeobject&lt;/code&gt; is composed of a doubly-linked list of &lt;code class=&quot;highlighter-rouge&quot;&gt;block&lt;/code&gt; nodes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So yes, a &lt;code class=&quot;highlighter-rouge&quot;&gt;deque&lt;/code&gt; is a (doubly-)linked list as another answer suggests.&lt;/p&gt;
+
+&lt;p&gt;Elaborating: What this means is that Python lists are much better for random-access and fixed-length operations, including slicing, while deques are much more useful for pushing and popping things off the ends, with indexing (but not slicing, interestingly) being possible but slower than with lists.&lt;/p&gt;
+
+&lt;h2 id=&quot;2018-01-30-tue-singly--doubly-linked-list&quot;&gt;2018-01-30 Tue: Singly &amp;amp; Doubly Linked List&lt;/h2&gt;
+
+&lt;h3 id=&quot;continue-the-c-implementation-for-collectionsdeque&quot;&gt;Continue the C-implementation for &lt;code class=&quot;highlighter-rouge&quot;&gt;collections.deque&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Simple Version : &lt;a href=&quot;https://gist.github.com/Wollw/2318276&quot;&gt;https://gist.github.com/Wollw/2318276&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;singly-and-doubly&quot;&gt;Singly and Doubly&lt;/h3&gt;
+
+&lt;h4 id=&quot;todo-qd-read-through&quot;&gt;todo-qd: Read Through&lt;/h4&gt;
+
+&lt;p&gt;https://code.tutsplus.com/articles/data-structures-with-javascript-singly-linked-list-and-doubly-linked-list–cms-23392&lt;/p&gt;
+
+&lt;h4 id=&quot;comparison-between-doubly--singly&quot;&gt;Comparison between Doubly &amp;amp; Singly&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;https://stackoverflow.com/questions/10708790/microsoft-asks-singly-list-or-doubly-list-what-are-the-pros-and-cons-of-using&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;my-understanding-from-the-answers&quot;&gt;My Understanding from the answers:&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Singly LL has smaller requirement, as the Node in Singly has only &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt;; while for Doubly LL, has &lt;code class=&quot;highlighter-rouge&quot;&gt;prev&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;next&lt;/code&gt;.
+```
+// node struct for Singly LL
+struct node_struct {
+  struct node_struct *next;
+  deque_val_type val;
+};&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;// node struct for Doubly LL
+struct node_struct {
+    struct node_struct *next;
+    struct node_struct *prev;
+    deque_val_type val;
+};
+```&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;So of course, Doubly LL has more efficient iteration (especially iterate in reverse)&lt;/li&gt;
+  &lt;li&gt;Cons For Singly LL, need to &lt;strong&gt;maintain a handle to the head node&lt;/strong&gt; of the list else, the list will be lost in memory!!
+    &lt;blockquote&gt;
+      &lt;p&gt;look at my Singly LL &lt;a href=&quot;https://github.com/qd452/Algorithm4/blob/master/PyAlgo4/src/Stack_LinkedList.py&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://github.com/qd452/Algorithm4/blob/master/PyAlgo4/src/Queue_LinkedList.py&quot;&gt;here&lt;/a&gt;, there is always a &lt;code class=&quot;highlighter-rouge&quot;&gt;self.first&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;self.head&lt;/code&gt;.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cons for Doubly LL, insertion and deletion is relatively more time consuming (need to re-assigning &lt;code class=&quot;highlighter-rouge&quot;&gt;.prev&lt;/code&gt; pointer for neighbor nodes)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;more-comparison-from-g4g&quot;&gt;More Comparison from &lt;a href=&quot;https://www.geeksforgeeks.org/doubly-linked-list/&quot;&gt;G4G&lt;/a&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;Advantages over singly linked list&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1) A DLL can be traversed in both forward and backward direction.&lt;/li&gt;
+  &lt;li&gt;2) The delete operation in DLL is more efficient if pointer to the node to be deleted is given.
+In singly linked list, to delete a node, pointer to the previous node is needed. To get this previous node, sometimes the list is traversed. In DLL, we can get the previous node using previous pointer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Disadvantages over singly linked list&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1) Every node of DLL Require extra space for an previous pointer. It is possible to implement DLL with single pointer though (See this and this).&lt;/li&gt;
+  &lt;li&gt;2) All operations require an extra pointer previous to be maintained. For example, in insertion, we need to modify previous pointers together with next pointers. For example in following functions for insertions at different positions, we need 1 or 2 extra steps to set previous pointer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;comparison-between-singly-ll-and-array-from-g4g&quot;&gt;Comparison between Singly LL and Array (from G4G)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Advantages over arrays
+1) Dynamic size
+2) Ease of insertion/deletion&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Drawbacks:
+1) Random access is not allowed. We have to access elements sequentially starting from the first node. So we cannot do binary search with linked lists.
+2) Extra memory space for a pointer is required with each element of the list.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;all-about-ll-geeksforgeeks-linked-list&quot;&gt;All about LL (GeeksforGeeks Linked List)&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/linked-list-set-1-introduction/&quot;&gt;https://www.geeksforgeeks.org/linked-list-set-1-introduction/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;todo-qd: for next, implementation of DLL (doubly linked list) in C and Python
+https://www.geeksforgeeks.org/doubly-linked-list/&lt;/p&gt;</content><author><name></name></author><summary type="html">Table of Contents</summary></entry></feed>

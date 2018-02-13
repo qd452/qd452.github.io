@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>My Algo Rebrush Schedule | DoNG’s Tech Blog</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="My Algo Rebrush Schedule" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Table of Contents" />
+<meta property="og:description" content="Table of Contents" />
+<link rel="canonical" href="http://localhost:4000/algo/python/deque/bst/2018/01/26/my_algo_rebrush_schedule.html" />
+<meta property="og:url" content="http://localhost:4000/algo/python/deque/bst/2018/01/26/my_algo_rebrush_schedule.html" />
+<meta property="og:site_name" content="DoNG’s Tech Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-01-26T07:39:40+08:00" />
+<script type="application/ld+json">
+{"headline":"My Algo Rebrush Schedule","dateModified":"2018-01-26T07:39:40+08:00","datePublished":"2018-01-26T07:39:40+08:00","url":"http://localhost:4000/algo/python/deque/bst/2018/01/26/my_algo_rebrush_schedule.html","description":"Table of Contents","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/algo/python/deque/bst/2018/01/26/my_algo_rebrush_schedule.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="DoNG's Tech Blog" />
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" rel="author" href="/">DoNG&#39;s Tech Blog</a>
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">My Algo Rebrush Schedule</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-01-26T07:39:40+08:00" itemprop="datePublished">
+        
+        Jan 26, 2018
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="table-of-contents">Table of Contents</h2>
+
+<ul class="no_toc" id="markdown-toc">
+  <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
+  <li><a href="#2018-01-26-fri-bst" id="markdown-toc-2018-01-26-fri-bst">2018-01-26 Fri: BST</a></li>
+  <li><a href="#2018-01-27-sat-deque-pronounced-as-deck" id="markdown-toc-2018-01-27-sat-deque-pronounced-as-deck">2018-01-27 Sat: deque (pronounced as “deck”)</a>    <ul>
+      <li><a href="#all-about-python-time-complexity" id="markdown-toc-all-about-python-time-complexity">All about Python Time Complexity</a></li>
+      <li><a href="#sidetrack" id="markdown-toc-sidetrack">Sidetrack</a></li>
+      <li><a href="#cpython-deque" id="markdown-toc-cpython-deque">CPython deque</a>        <ul>
+          <li><a href="#how-are-deques-in-python-implemented-and-when-are-they-worse-than-lists" id="markdown-toc-how-are-deques-in-python-implemented-and-when-are-they-worse-than-lists"><strong>How are deques in Python implemented, and when are they worse than lists?</strong></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#2018-01-30-tue-singly--doubly-linked-list" id="markdown-toc-2018-01-30-tue-singly--doubly-linked-list">2018-01-30 Tue: Singly &amp; Doubly Linked List</a>    <ul>
+      <li><a href="#continue-the-c-implementation-for-collectionsdeque" id="markdown-toc-continue-the-c-implementation-for-collectionsdeque">Continue the C-implementation for <code class="highlighter-rouge">collections.deque</code></a></li>
+      <li><a href="#singly-and-doubly" id="markdown-toc-singly-and-doubly">Singly and Doubly</a>        <ul>
+          <li><a href="#todo-qd-read-through" id="markdown-toc-todo-qd-read-through">todo-qd: Read Through</a></li>
+          <li><a href="#comparison-between-doubly--singly" id="markdown-toc-comparison-between-doubly--singly">Comparison between Doubly &amp; Singly</a></li>
+          <li><a href="#my-understanding-from-the-answers" id="markdown-toc-my-understanding-from-the-answers">My Understanding from the answers:</a>            <ul>
+              <li><a href="#more-comparison-from-g4g" id="markdown-toc-more-comparison-from-g4g">More Comparison from G4G</a></li>
+            </ul>
+          </li>
+          <li><a href="#comparison-between-singly-ll-and-array-from-g4g" id="markdown-toc-comparison-between-singly-ll-and-array-from-g4g">Comparison between Singly LL and Array (from G4G)</a></li>
+        </ul>
+      </li>
+      <li><a href="#all-about-ll-geeksforgeeks-linked-list" id="markdown-toc-all-about-ll-geeksforgeeks-linked-list">All about LL (GeeksforGeeks Linked List)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="2018-01-26-fri-bst">2018-01-26 Fri: BST</h2>
+
+<p>briefly looked through the implementation of <a href="https://github.com/qd452/Algorithm4/blob/master/PyAlgo4/src/bst.py">BST</a>.</p>
+
+<p>Until Line 94:
+    1. construct a BST ( recursively)
+    2. in-order traversal &amp; pre-order traversal recursively
+    3. in-order traversal without recursion, using stack</p>
+
+<h2 id="2018-01-27-sat-deque-pronounced-as-deck">2018-01-27 Sat: deque (pronounced as “deck”)</h2>
+
+<p><a href="http://chimera.labs.oreilly.com/books/1230000000393/ch01.html#_problem_3">Keeping the last N items</a></p>
+
+<blockquote>
+  <p><strong>\PyAlgo4\src\deque_application.py</strong></p>
+</blockquote>
+
+<h3 id="all-about-python-time-complexity">All about Python Time Complexity</h3>
+
+<ul>
+  <li>https://wiki.python.org/moin/TimeComplexity</li>
+  <li>https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt</li>
+</ul>
+
+<h3 id="sidetrack">Sidetrack</h3>
+
+<ul>
+  <li>https://stackoverflow.com/questions/48126428/how-to-make-the-inverse-of-a-linear-function/48472357#48472357</li>
+</ul>
+
+<h3 id="cpython-deque">CPython deque</h3>
+
+<ul>
+  <li><strong>Python2.7</strong>: https://github.com/python/cpython/blob/2.7/Lib/collections.py</li>
+  <li><strong>Python3.6</strong>: https://github.com/python/cpython/blob/3.6/Lib/collections/<strong>init</strong>.py</li>
+</ul>
+
+<blockquote>
+  <p>extensive reading [todo-qd]: https://docs.python.org/3/library/collections.abc.html#module-collections.abc</p>
+</blockquote>
+
+<hr />
+
+<h4 id="how-are-deques-in-python-implemented-and-when-are-they-worse-than-lists"><strong><a href="https://stackoverflow.com/questions/6256983/how-are-deques-in-python-implemented-and-when-are-they-worse-than-lists/6257048#6257048">How are deques in Python implemented, and when are they worse than lists?</a></strong></h4>
+
+<p>https://hg.python.org/cpython/file/3.5/Modules/_collectionsmodule.c</p>
+
+<blockquote>
+  <p>A <code class="highlighter-rouge">dequeobject</code> is composed of a doubly-linked list of <code class="highlighter-rouge">block</code> nodes.</p>
+</blockquote>
+
+<p>So yes, a <code class="highlighter-rouge">deque</code> is a (doubly-)linked list as another answer suggests.</p>
+
+<p>Elaborating: What this means is that Python lists are much better for random-access and fixed-length operations, including slicing, while deques are much more useful for pushing and popping things off the ends, with indexing (but not slicing, interestingly) being possible but slower than with lists.</p>
+
+<h2 id="2018-01-30-tue-singly--doubly-linked-list">2018-01-30 Tue: Singly &amp; Doubly Linked List</h2>
+
+<h3 id="continue-the-c-implementation-for-collectionsdeque">Continue the C-implementation for <code class="highlighter-rouge">collections.deque</code></h3>
+
+<p>Simple Version : <a href="https://gist.github.com/Wollw/2318276">https://gist.github.com/Wollw/2318276</a></p>
+
+<h3 id="singly-and-doubly">Singly and Doubly</h3>
+
+<h4 id="todo-qd-read-through">todo-qd: Read Through</h4>
+
+<p>https://code.tutsplus.com/articles/data-structures-with-javascript-singly-linked-list-and-doubly-linked-list–cms-23392</p>
+
+<h4 id="comparison-between-doubly--singly">Comparison between Doubly &amp; Singly</h4>
+
+<blockquote>
+  <p>https://stackoverflow.com/questions/10708790/microsoft-asks-singly-list-or-doubly-list-what-are-the-pros-and-cons-of-using</p>
+</blockquote>
+
+<h4 id="my-understanding-from-the-answers">My Understanding from the answers:</h4>
+
+<ul>
+  <li>Singly LL has smaller requirement, as the Node in Singly has only <code class="highlighter-rouge">next</code>; while for Doubly LL, has <code class="highlighter-rouge">prev</code> and <code class="highlighter-rouge">next</code>.
+```
+// node struct for Singly LL
+struct node_struct {
+  struct node_struct *next;
+  deque_val_type val;
+};</li>
+</ul>
+
+<p>// node struct for Doubly LL
+struct node_struct {
+    struct node_struct *next;
+    struct node_struct *prev;
+    deque_val_type val;
+};
+```</p>
+<ul>
+  <li>So of course, Doubly LL has more efficient iteration (especially iterate in reverse)</li>
+  <li>Cons For Singly LL, need to <strong>maintain a handle to the head node</strong> of the list else, the list will be lost in memory!!
+    <blockquote>
+      <p>look at my Singly LL <a href="https://github.com/qd452/Algorithm4/blob/master/PyAlgo4/src/Stack_LinkedList.py">here</a> and <a href="https://github.com/qd452/Algorithm4/blob/master/PyAlgo4/src/Queue_LinkedList.py">here</a>, there is always a <code class="highlighter-rouge">self.first</code> or <code class="highlighter-rouge">self.head</code>.</p>
+    </blockquote>
+  </li>
+  <li>Cons for Doubly LL, insertion and deletion is relatively more time consuming (need to re-assigning <code class="highlighter-rouge">.prev</code> pointer for neighbor nodes)</li>
+</ul>
+
+<h5 id="more-comparison-from-g4g">More Comparison from <a href="https://www.geeksforgeeks.org/doubly-linked-list/">G4G</a></h5>
+
+<p><strong>Advantages over singly linked list</strong></p>
+<ul>
+  <li>1) A DLL can be traversed in both forward and backward direction.</li>
+  <li>2) The delete operation in DLL is more efficient if pointer to the node to be deleted is given.
+In singly linked list, to delete a node, pointer to the previous node is needed. To get this previous node, sometimes the list is traversed. In DLL, we can get the previous node using previous pointer.</li>
+</ul>
+
+<p><strong>Disadvantages over singly linked list</strong></p>
+<ul>
+  <li>1) Every node of DLL Require extra space for an previous pointer. It is possible to implement DLL with single pointer though (See this and this).</li>
+  <li>2) All operations require an extra pointer previous to be maintained. For example, in insertion, we need to modify previous pointers together with next pointers. For example in following functions for insertions at different positions, we need 1 or 2 extra steps to set previous pointer.</li>
+</ul>
+
+<h4 id="comparison-between-singly-ll-and-array-from-g4g">Comparison between Singly LL and Array (from G4G)</h4>
+<ul>
+  <li>
+    <p>Advantages over arrays
+1) Dynamic size
+2) Ease of insertion/deletion</p>
+  </li>
+  <li>
+    <p>Drawbacks:
+1) Random access is not allowed. We have to access elements sequentially starting from the first node. So we cannot do binary search with linked lists.
+2) Extra memory space for a pointer is required with each element of the list.</p>
+  </li>
+</ul>
+
+<h3 id="all-about-ll-geeksforgeeks-linked-list">All about LL (GeeksforGeeks Linked List)</h3>
+
+<p><strong><a href="https://www.geeksforgeeks.org/linked-list-set-1-introduction/">https://www.geeksforgeeks.org/linked-list-set-1-introduction/</a></strong></p>
+
+<p>todo-qd: for next, implementation of DLL (doubly linked list) in C and Python
+https://www.geeksforgeeks.org/doubly-linked-list/</p>
+
+  </div>
+
+  
+
+  <a class="u-url" href="/algo/python/deque/bst/2018/01/26/my_algo_rebrush_schedule.html" hidden></a>
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">DoNG&#39;s Tech Blog</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            
+              DoNG&#39;s Tech Blog
+            
+            </li>
+            
+            <li><a class="u-email" href="mailto:qudong452@gmail.com">qudong452@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+  
+  
+  
+  <li><a href="https://github.com/qd452"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">qd452</span></a></li>
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Do Not Give-up!   O ever youthful, O ever weeping!  Stay Hungry! Stay Foolish! </p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
