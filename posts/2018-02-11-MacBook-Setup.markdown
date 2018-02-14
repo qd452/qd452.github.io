@@ -80,7 +80,11 @@ https://kramdown.gettalong.org/converter/html.html
     ```
     theme: jekyll-theme-cayman
     ```
-4. ran `bundle exec jekyll serve` which results in the following:
+4. ran `bundle exec jekyll serve` which start the static web in `http://127.0.0.1:4000/`
+
+### Continue with Jekyll
+
+**[todo-qd] read through the Jekyll official site to understand the whole concept and philosiphy, and review my airbab page in github repo udacity**
 
 
 ## 0.6 Shell Text Editor [todo]
