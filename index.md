@@ -8,5 +8,7 @@ layout: default
 
 [2018-02-11-MacBook-Setup](posts/2018-02-11-MacBook-Setup)
 
+[2018-02-22-Understanding_Dispatch](posts/2018-02-22-Understanding_Dispatch)
+
 
 

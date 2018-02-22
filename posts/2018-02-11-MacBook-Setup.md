@@ -14,9 +14,11 @@ categories: macbook mbp journal tech setup
 
 ## 0. Basic Setup
 
-### Badassify your ternimal and shell [todo]
+### Badassify your ternimal and shell [todo] -> [done]
 
 > <http://jilles.me/badassify-your-terminal-and-shell>
+
+just follow **all** of the instructions, which is indeed quite useful and powerful
 
 
 ## 0.5 Setting up Github Page
