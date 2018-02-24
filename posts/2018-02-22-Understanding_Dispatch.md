@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Understanding Dispatch"
-date:   2018-02-10 14:39:40 +0800
+date:   2018-02-22 08:39:40 +0800
 categories: Dispatch Dynamic-dispath telegram api ploymorhic
 ---
 

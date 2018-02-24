@@ -107,10 +107,18 @@ To move the cursor to the line-start and line-end: use `control+a` and `control+
 
 
 
-## 1. Make IPython console Available in Pycharm [todo]
+## 1. Make IPython console Available in Pycharm *[todo]->[done]*
 
 > https://www.jetbrains.com/help/pycharm/scientific-tools.html
 > http://jupyter.org/
+
+Based on my brief jupyter, it is quite a powerful collections of tools for write notebook, and also kick start the IPython console. Currently, i only use it to initiate the IPython console, but later will also explore more about it's power.
+
+1. Install the jupyter by using `pip3 install jupyter`
+2. (optionall) Install `PyQt5`, as it looks like that basically it's the only version being supported in Python3.6. Yes, i'm now using Python3.6 in Mac
+3. Open the IPython console by running `jupyter qtconsole`!
+
+That is all! And th `qtconsole` is so strong in Unix-like env, as it also supports the linux command (`ls` etc!)
 
 ## 2. Building my Old Django Blog in the server
 
