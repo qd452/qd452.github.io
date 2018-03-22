@@ -14,7 +14,33 @@ categories: Cryptocurrency cryptography crypto blockchain sha256 ut-8 encoding p
 
 ## Get Started Reference
 
+<https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b>
 <https://mp.weixin.qq.com/s/GrpY52N5VDWB7UOqmIadUg>
+
+- an immutable chain
+- are not issued or managed by central authority (去中心化)
+- distributed computing
+
+
+## Definiation of BlockChain
+
+> a **digital ledger** in which transactions made in bitcoin or another cryptocurrency are recorded chronologically and publicly.
+
+## Running the BlockChain Flask Server with the Sample Code
+
+<https://github.com/qd452/QuoinexMathMaX/blob/master/blockchain/toy_blockchain_server.py>
+
+Basically, the process is
+
+1. Create Transections (lists of transections in one block)
+2. Miners will come and start to mine this transections, Proof of Work (POW) will be used to limit the speed and prevent the 通货膨胀
+3. After the mining process is done, this block will be appended into the block chain, during which, the miners will also be awarded with certain amount of coins in the case of Bitcoin
+4. repeat the above procedures
+
+![Mining](https://github.com/qd452/QuoinexMathMaX/blob/master/blockchain/mining_process.png)
+
+![BlockChain Result](https://github.com/qd452/QuoinexMathMaX/blob/master/blockchain/blockchain_rslt.png)
+---
 
 ## SHA-256
 
