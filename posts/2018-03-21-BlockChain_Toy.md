@@ -37,9 +37,10 @@ Basically, the process is
 3. After the mining process is done, this block will be appended into the block chain, during which, the miners will also be awarded with certain amount of coins in the case of Bitcoin
 4. repeat the above procedures
 
-![Mining](https://github.com/qd452/QuoinexMathMaX/blob/master/blockchain/mining_process.png)
+![Mining](<https://github.com/qd452/QuoinexMathMaX/blob/master/blockchain/mining_process.png>)
 
-![BlockChain Result](https://github.com/qd452/QuoinexMathMaX/blob/master/blockchain/blockchain_rslt.png)
+![BlockChain Result](<https://github.com/qd452/QuoinexMathMaX/blob/master/blockchain/blockchain_rslt.png>)
+
 ---
 
 ## SHA-256
