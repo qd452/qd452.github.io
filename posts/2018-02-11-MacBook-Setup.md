@@ -120,7 +120,7 @@ Based on my brief jupyter, it is quite a powerful collections of tools for write
 
 That is all! And th `qtconsole` is so strong in Unix-like env, as it also supports the linux command (`ls` etc!)
 
-## 2. Building my Old Django Blog in the server
+## V. Building my Old Django Blog in the server
 
 **Important: the server I use to deploy is `HeroKu`**
 
@@ -129,7 +129,7 @@ That is all! And th `qtconsole` is so strong in Unix-like env, as it also suppor
 **I used the qudong452@gmail.com, but I forgot the pwd and now cannot log-in**
 
 
-## V. Setting Up the Virtual Environment for Python (virtualenv)
+## VI. Setting Up the Virtual Environment for Python (virtualenv)
 
 > http://django-tinymce.readthedocs.io/en/latest/installation.html#prerequisites
 
@@ -146,11 +146,11 @@ Installing setuptools, pip, wheel...done.`
 7. 
 
 
-## VI. Using the Virtualenv to Build a Django APP with tinymce
+## VII. Using the Virtualenv to Build a Django APP with tinymce
 
 [TODO]
 
-## VII. Sublime Text 3 Setup
+## VIII. Sublime Text 3 Setup
 
 In General the Packages Need to be installed and the settings and keymaps are in my *Dropbpx->sublime->User*
 
