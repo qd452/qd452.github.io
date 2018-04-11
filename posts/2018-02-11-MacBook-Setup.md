@@ -12,7 +12,7 @@ categories: macbook mbp journal tech setup
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## 0. Basic Setup
+## I. Basic Setup
 
 ### Badassify your ternimal and shell [todo] -> [done]
 
@@ -21,7 +21,7 @@ categories: macbook mbp journal tech setup
 just follow **all** of the instructions, which is indeed quite useful and powerful
 
 
-## 0.5 Setting up Github Page
+## II. Setting up Github Page
 
 ### Installing and Get Started with Jekyll
 
@@ -89,11 +89,11 @@ https://kramdown.gettalong.org/converter/html.html
 **[todo-qd] read through the Jekyll official site to understand the whole concept and philosiphy, and review my airbab page in github repo udacity**
 
 
-## 0.6 Shell Text Editor [todo]
+## III. Shell Text Editor [todo]
 
 **nano, Emacs & Vim**
 
-## I use nano for the moment..
+**I use nano for the moment..**
 
 > https://wiki.gentoo.org/wiki/Nano
 
@@ -107,7 +107,7 @@ To move the cursor to the line-start and line-end: use `control+a` and `control+
 
 
 
-## 1. Make IPython console Available in Pycharm *[todo]->[done]*
+## IV. Make IPython console Available in Pycharm *[todo]->[done]*
 
 > https://www.jetbrains.com/help/pycharm/scientific-tools.html
 > http://jupyter.org/
@@ -129,7 +129,7 @@ That is all! And th `qtconsole` is so strong in Unix-like env, as it also suppor
 **I used the qudong452@gmail.com, but I forgot the pwd and now cannot log-in**
 
 
-## 3. Setting Up the Virtual Environment for Python (virtualenv)
+## V. Setting Up the Virtual Environment for Python (virtualenv)
 
 > http://django-tinymce.readthedocs.io/en/latest/installation.html#prerequisites
 
@@ -146,10 +146,70 @@ Installing setuptools, pip, wheel...done.`
 7. 
 
 
-## 4. Using the Virtualenv to Build a Django APP with tinymce
+## VI. Using the Virtualenv to Build a Django APP with tinymce
 
+[TODO]
 
+## VII. Sublime Text 3 Setup
 
+In General the Packages Need to be installed and the settings and keymaps are in my *Dropbpx->sublime->User*
+
+### 1. key bindings (keymap)
+
+Move the cursor in 4 different directions
+
+```json
+[
+ { "keys": ["super+j"], "command": "move", "args": {"by": "characters", "forward": false} },
+    { "keys": ["super+;"], "command": "move", "args": {"by": "characters", "forward": true} },
+    { "keys": ["super+o"], "command": "move", "args": {"by": "lines", "forward": false} },
+    { "keys": ["super+l"], "command": "move", "args": {"by": "lines", "forward": true} },   
+]
+```
+
+### 2. Sublime Preferences -> General settings
+
+```json
+{
+    "added_words":
+    [
+        "iterable",
+        "lifecycle"
+    ],
+    "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+    "font_face": "Consolas",
+    "font_size": 16,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Sublime Linter",
+        "Vintage"
+    ],
+    "open_files_in_new_window": false,
+    "spell_check": true,
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
+}
+```
+
+**Note: By default, the "Markdown" is in the "ignored_packages", I need to overwrite it, otherwise I will have the problem of `MarkdownEditing` is not working
+
+### 3. Creating the TOC using the MarkdownTOC plug in for Sublime 3
+
+<https://github.com/naokazuterada/MarkdownTOC>
+
+Please watch the GIF in the above links, to auto generate the autolink for the TOC, I not only need to change the user settings for MarkdownTOC, but also change the parameters in each .md files, with the param of `autolink="true"`:
+
+```
+<!-- MarkdownTOC autolink="true" -->
+
+- [Heading 1](#heading-1)
+  - [Heading 2](#heading-2)
+  - [Heading 3](#heading-3)
+
+<!-- /MarkdownTOC -->
+```
 
 
 [back](../)
