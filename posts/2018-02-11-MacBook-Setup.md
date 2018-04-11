@@ -160,7 +160,7 @@ Move the cursor in 4 different directions
 
 ```json
 [
- { "keys": ["super+j"], "command": "move", "args": {"by": "characters", "forward": false} },
+ { "keys": ["super+k"], "command": "move", "args": {"by": "characters", "forward": false} },
     { "keys": ["super+;"], "command": "move", "args": {"by": "characters", "forward": true} },
     { "keys": ["super+o"], "command": "move", "args": {"by": "lines", "forward": false} },
     { "keys": ["super+l"], "command": "move", "args": {"by": "lines", "forward": true} },   
