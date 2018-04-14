@@ -211,5 +211,9 @@ Please watch the GIF in the above links, to auto generate the autolink for the T
 <!-- /MarkdownTOC -->
 ```
 
+## IX. Connecting to BitBucket
+
+<https://stackoverflow.com/questions/21255438/permission-denied-publickey-fatal-could-not-read-from-remote-repository-whil>
+![](SourceTree_Cannot_Connect_to_BitBucket.png)
 
 [back](../)
