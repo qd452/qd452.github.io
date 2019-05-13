@@ -12,5 +12,7 @@ layout: default
 
 [2018-03-21-BlockChain_Toy](posts/2018-03-21-BlockChain_Toy)
 
+[2019-05-13-Eloquent-JavaScript-Notes](posts/2019-05-13-Eloquent-JavaScript-Notes)
+
 
 
