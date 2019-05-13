@@ -32,8 +32,8 @@ categories: Cryptocurrency cryptography crypto blockchain sha256 ut-8 encoding p
 
 Basically, the process is
 
-1. Create Transections (lists of transections in one block)
-2. Miners will come and start to mine this transections, Proof of Work (POW) will be used to limit the speed and prevent the 通货膨胀
+1. Create Transactions (lists of transactions in one block)
+2. Miners will come and start to mine this transactions, Proof of Work (POW) will be used to limit the speed and prevent the inflation
 3. After the mining process is done, this block will be appended into the block chain, during which, the miners will also be awarded with certain amount of coins in the case of Bitcoin
 4. repeat the above procedures
 
