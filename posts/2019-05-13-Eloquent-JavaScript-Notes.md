@@ -109,26 +109,157 @@ a = "Agnes" or "user" # a="Agnes"
 ```
 
 
+## Chapter 2. Program Structure
+
+### Bindings
+
+Binding, is variable
+
+```js
+let one = 1, two = 2;
+```
+
+### Binding Names
+
+Binding name must not start with a digit. A binding name may include dollar signs ($) or underscores (_)
+
+### The environment
+
+The collection of bindings and their values that exist at a given time is called the environment. 
+
+### Return Values
+
+- `Math.max()` == max
+- `Math.min()` == min
+- `Math.pow(2, 3)` == 2**3
+- `Number()` converts value to number. similar functions called `String` and `Boolean` that convert values to those Types
+- `Number.isNaN` function returns true only if the argument it is given is NaN.
+
+### While loops
+
+a do loop always executes its body at least once
+```js
+let yourName;
+do {
+  yourName = prompt("Who are you?");
+} while (!yourName);
+console.log(yourName);
+```
+
+### Updating bindings succinctly
+
+- `c += 1`, `c -= 1`
+- `c++`, `c--`
+
+### Switch
+
+```js
+switch (prompt("What is the weather like?")) {
+  case "rainy":
+    console.log("Remember to bring an umbrella.");
+    break;
+  case "sunny": # when case is 'sunny', it will execute until break
+    console.log("Dress lightly."); // NOTE here don't have break
+  case "cloudy":
+    console.log("Go outside.");
+    break;
+  default:
+    console.log("Unknown weather type!");
+    break;
+}
+```
+
+### Binding name Capitalization
+
+- `fuzzyLittleTurtle`
+- In a few cases, such as the `Number` function, the first letter of a binding is also capitalized. This was done to mark this function as a **constructor**. 
+
+## Chapter 3. Functions
+
+### Defining a function
+
+```js
+const foo = function(x) {
+    return x * x;
+};
+```
+
+A `return `keyword without an expression after it will cause the function to return `undefined`.
+
+The `return` statement is affected by **Automatic semicolon insertion (ASI)**
+
+```js
+return
+a+b;
+```
+
+is transformed by ASI into 
+```js
+return;
+a+b;
+```
+
+### Bindings and scopes
+
+- Bindings created for function parameters or declared inside a function can be referenced only in that function, so they are known as **local bindings**.
+
+#### Good link to explain `var` VS `let` VS `const`
 
 
+var VS let VS const
 
+* var: 
+  - function scoped
+  - undefined when accessing a variable before it's declared
 
+* let: 
+  - block scoped
+  - ReferenceError when accessing a variable before it's declared
 
+* const:
+  - block scoped
+  - ReferenceError when accessing a variable before it's declared
+  can't be reassigned
 
+### Nested scope - lexical scoping
 
+### Functions as values
 
+### Declaration notation
 
+```JavaScript
+function foo(x) {
+    return x * x;
+} // very python style
+```
+GOOD THING about this Declaration is that the preceding code works, even though the function is defined *below* the code that uses it.
 
+AND, in this case, no `;` is needed, while the others function Declaration needs.  
 
+### Arrow Functions
 
+```JavaScript
+let foo = (x) => {
+    return x * x;
+};
+const square1 = (x) => { return x * x; };
+const square2 = x => x * x;
+const bar = () => {console.log("bar"); };
+```
 
+### Optional Arguments
 
+number of Arguments
+- when pass too many, the extra ones are ignored
+- when pass too few, the missing ones assigned with `undefined`
 
+```js
+const minus = (a,b) =>{
+    if (b === undefined) return -a;
+    else return a - b;
+}
+```
 
-
-
-
-
-
+### Closure
 
 
