@@ -262,4 +262,283 @@ const minus = (a,b) =>{
 
 ### Closure
 
+- What happens to local bindings when the function call that created them is no longer active? -> Still alivce
+- This feature—being able to reference a specific instance of a local binding in an enclosing scope—is called *closure*.
+
+```js
+function wrapValue(n) {
+  let local = n;
+  return () => local;
+}
+
+function multiplier(factor) {
+  return number => number * factor;
+}
+```
+
+## Chapter 4. Data Structures: Objects and Arrays
+
+### Data set
+
+### Properties
+
+- Almost all JavaScript values have properties. The exceptions are `null` and `undefined`.
+
+  ```js
+  console.log(null.length); // TypeError: Cannot read property 'length' of null (line 1 in function eval)
+
+  console.log(NaN.length); // undefined
+  ```
+
+- The elements in an array are stored as the array’s properties, using numbers as property names. 
+
+### Methods
+
+- Properties that contain functions are generally called methods of the value they belong to, as in “toUpperCase is a method of a string”
+
+#### Array Common Methods
+
+- `Array​.prototype​.includes()` determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+- `push` is `append`
+- `pop()` is `pop()`
+- `shift()` is `pop(0)`. For `shift`, if array is empty, return `undefined`. For python, it will raise `IndexError: pop from empty list`
+- When creating a 1D array of length N filled with 0:
+  ```js
+  let N = 3;
+  let dp = Array(N).fill(0);
+  console.log(dp); // -> Array [0, 0, 0]
+  ```
+- `fill(value[, start[, end]])`
+- When creating a 2D array of length M*N, filled with 0:
+  ```js
+  let M=2, N=4;
+  let dp = Array.from(Array(M), () => new Array(N).fill(0));
+  console.log(dp);
+  // -> Array [Array [0, 0, 0, 0], Array [0, 0, 0, 0]]
+  ```
+
+- `Array.from()` method creates a new, shallow-copied Array instance from an array-like or iterable object.
+  + Convert string to array
+    * `Array.from('foo')` will yield `Array ["f", "o", "o"]`
+    * while `Array('foo')` will yield `Array ["foo"]`
+- `indexOf()` is `index()`. It return the first index at which the given element can be found in the array. However
+  + For `indexOf`, return -1 if not found
+  + For `index` in Py, raise `ValueError`
+- `a.reverse()` is `a[::-1]` in Python
+- `arr.slice([begin[, end]])` is the array indexing, like `a[begin:end]` in Python
+  + `arr.slice()` is `arr[:]`
+- To sort array in ascending order
+  + `a.sort((x,y)=>x-y);` 
+  + `a.sort()` in Python
+- Insert at the beginning, if `a=[3,4,5]`
+  + `a.unshift(4,5)` will return 5, which is the new length of array after `unshift`; and now the array becomes `[4,5,3,4,5[`
+  + `a.insert(0,5); a.insert(0,4)` in python, or `[4,5] + arr`
+- `splice`
+  + `var arrDeletedItems = array.splice(start[, deleteCount[, item1[, item2[, ...]]]])`
+  + delete by index, for example `idx=2`
+    * `arr.splice(2,1)`
+    * while in python, its more straightforward, `del arr[2]`
+  + insert item at certain index, for example `idx=4, val-5`
+    * `arr.splice(4,0,5)`
+    * while in python, just use `arr.insert(4,5)`
+- `concat`
+  + `a = b.concat(c);`
+  + `a = b + c` in python
+  + Note in JS, for string, can directly use `+` to concat strings. But cannot use `+` to concat array
+    ```js
+    let a1 = [1,2], a2 = [3,4];
+    console.log(a1+a2); // -> "1,23,4"
+    ```
+- Note, in JS, index can also be negative, which is the same as in Python.
+
+
+### Objects
+
+- Objects are created in the same way as `dictionary` in python. BUT property names no need to add "" unless it contains space.
+- Each property has a name followed by a colon and a value.
+- `delete` remove the named property of Object
+- `in` tells you whether that object has a property with that name
+- `Object.keys()` and `Object.values()`
+
+```js
+let obj = {x: 0, y: 0, z: 2};
+console.log(Object.keys(obj));  // → ["x", "y", "z"]
+console.log(Object.values(obj));  // → [0, 0, 2]
+```
+
+- `Object.assign()` like `update` in Python
+-  If you evaluate `typeof []`, it produces "object"
+
+### Mutability
+
+- numbers, strings, and Booleans, are all immutable
+
+### Strings and their properties
+
+- Values of type string, number, and Boolean are **not objects**, and though the language doesn’t complain if you try to set new properties on them, it doesn’t actually store those properties. As mentioned earlier, such values are **immutable** and cannot be changed.
+  ```js
+  let kim = "Kim";
+  kim.age = 88;
+  console.log(kim.age);
+  // → undefined
+  ```
+- `slice()`
+- `indexOf()`
+- `trim()` is `strip()`
+- `trimEnd()` or `trimRight()` is `rstrip()`
+- `trimStart()` or `trimLeft()` is `lstrip()`
+- `padStart()`
+  + `str.padStart(targetLength [, padString])`
+- `split()`  is the same as in python
+- `repeat(N)`, in python `*N`
+  + `let a = 'a'; a.repeat(3);` results `"aaa"`
+  + in py, `a='a'; a*3` results the same
+
+### Rest parameters
+
+- When such a function is called, the rest parameter is bound to an array containing all further arguments.
+- It is the same as `*args` in Python
+
+```js
+let numbers = [5, 1, 7];
+console.log(Math.max(...numbers));  // -> 7
+console.log(Math.max(numbers));  // -> NaN
+```
+
+### The Math object
+
+- `Math.sqrt()`
+- `Math.random()` from [0,1)
+- `Math.floor()`, `Math.ceil()`, `Math.round`, `Math.abs()`
+
+### Destructuring assignment
+
+The **destructuring assignment** syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+
+Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+#### Array destructuring
+
+```js
+var x = [1, 2, 3, 4, 5];
+var [y, z] = x;
+// y=1, z=2
+```
+
+while in Python
+
+```py
+x = [1, 2, 3, 4, 5]
+y, z, *_ = x
+# y=1, z=2
+# y,z = x will raise ValueError: too many values to unpack (expected 2)
+```
+
+1. default value
+
+```js
+var a, b;
+[a=5, b=7] = [1];
+// a=1, b=7
+```
+
+2. swapping values
+
+`[a, b] = [b, a];`
+
+3. ignoring some values
+
+```js
+var x = [1,2,3,4];
+var [m, ,n] = x;
+console.log(m, n); // 1, 3
+```
+Note, here is equivalent to `m, _, n, *_ = x` in Python. Note `m, *_, n = x`!!
+
+4. get second last element from array
+
+```js
+const [x] = arr.slice(-2);
+```
+
+5. Assigning the rest of an array to a variable
+
+```js
+var x = [1,2,3,4];
+var [a, ...b] = x;
+console.log(a, b); // 1, [2, 3, 4]
+```
+
+#### Object destructuring
+
+1. basic assignment
+
+```js
+var o = {p: 42, q: true};
+var {p, q} = o;
+```
+
+2. assignment to new variable names
+
+```js
+var o = {p: 42, q: true};
+var {p: foo, q: bar} = o;
+console.log(foo, bar); // -> 42, true
+```
+
+3. Setting a function parameter's default value
+
+ES2015 version
+```js
+function drawES2015Chart({size = 'big', coords = {x: 0, y: 0}, radius = 25} = {}) {
+  console.log(size, coords, radius);
+  // do some chart drawing
+}
+
+drawES2015Chart({
+  coords: {x: 18, y: 30},
+  radius: 30
+});
+```
+
+4. Unpacking fields from objects passed as function parameter
+[TODO]
+
+5. Computed object property names and destructuring
+
+```js
+let key = 'z';
+let {[key]: foo} = {z: 'bar'};
+console.log(foo); // "bar"
+```
+
+### JSON
+
+- object to JSON: `JSON.stringify()`, equivalent to `json.dumps()` in python
+- JSON to object: `JSON.parse()`, equivalent to `json.loads()` in python
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
