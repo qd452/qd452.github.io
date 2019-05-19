@@ -324,6 +324,9 @@ function multiplier(factor) {
 - `indexOf()` is `index()`. It return the first index at which the given element can be found in the array. However
   + For `indexOf`, return -1 if not found
   + For `index` in Py, raise `ValueError`
+  + `arr.indexOf(searchElement[, fromIndex])`
+- `findIndex()` method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+  + `arr.findIndex(callback(element[, index[, array]])[, thisArg])`
 - `a.reverse()` is `a[::-1]` in Python
 - `arr.slice([begin[, end]])` is the array indexing, like `a[begin:end]` in Python
   + `arr.slice()` is `arr[:]`
@@ -349,6 +352,8 @@ function multiplier(factor) {
     let a1 = [1,2], a2 = [3,4];
     console.log(a1+a2); // -> "1,23,4"
     ```
+- `some` like `any` in python
+  + `arr.some(callback(element[, index[, array]])[, thisArg])`
 - Note, in JS, index can also be negative, which is the same as in Python.
 
 
@@ -517,8 +522,48 @@ console.log(foo); // "bar"
 - object to JSON: `JSON.stringify()`, equivalent to `json.dumps()` in python
 - JSON to object: `JSON.parse()`, equivalent to `json.loads()` in python
 
+## Chapter 5. Higher-Order Functions
+
+### Higher-order functions
+
+Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions. 
+
+use `reduce` to find the maximum
+```python
+from functools import reduce
+a=[1,2,3,4,5,4,3]
+m = reduce(lambda x,y: x if x>y else y, a)
+```
+
+Can use it to find the key with max value
+```python
+c = {'a': 5, 'e': 3, 'b': 3, 'd': 1, 't': 2}
+r= reduce(lambda x,y: x if c[x]>c[y] else y, c)
+assert r == 'a'
+```
+However, there are other ways, https://stackoverflow.com/questions/268272/getting-key-with-maximum-value-in-dictionary
+
+### Strings and character codes
+
+JavaScript strings are encoded as a sequence of 16-bit numbers. These are called code units.
+
+**UTF-16** **UTF-8**
+
+https://javarevisited.blogspot.com/2015/02/difference-between-utf-8-utf-16-and-utf.html
+https://stackoverflow.com/questions/496321/utf-8-utf-16-and-utf-32
+
+> 1) UTF16 is not fixed width. It uses 2 or 4 bytes. Only UTF32 is fixed-width and unfortunately no one uses it.  Also, worth knowing is that Java Strings are represented using UTF-16 bit characters, earlier they use USC2, which is fixed width. 
+> 2) You might think that because UTF-8 take less bytes for many characters it would take less memory that UTF-16, well that really depends on what language the string is in. For non-European languages, UTF-8 requires more memory than UTF-16.
+> 3) ASCII is strictly faster than multi-byte encoding scheme because less data to process = faster.
+> 
+> Summary:
+> - UTF-8: Variable-width encoding, backwards compatible with ASCII.  ASCII characters (U+0000 to U+007F) take 1 byte, code points U+0080 to U+07FF take 2 bytes, code points U+0800 to U+FFFF take 3 bytes, code points U+10000 to U+10FFFF take 4 bytes.  Good for English text, not so good for Asian text.
+> - UTF-16: Variable-width encoding.  Code points U+0000 to U+FFFF take 2 bytes, code points U+10000 to U+10FFFF take 4 bytes.  Bad for English text, good for Asian text.
+> - UTF-32: Fixed-width encoding.  All code points take four bytes.  An enormous memory hog, but fast to operate on.  Rarely used.
 
 
+- `charCodeAt` method gives you a code unit, not a full character code. 
+- `codePointAt` method, added later, does give a full Unicode character.
 
 
 
