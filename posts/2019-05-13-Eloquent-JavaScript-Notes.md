@@ -528,6 +528,13 @@ console.log(foo); // "bar"
 
 Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions. 
 
+```js
+let arr = [{name: "ltr", count: 3}, {name: "rtl", count: 9}]
+arr = [{name: "ltr", count: 3}];
+let r = arr.reduce((x,y) => x.count<y.count ? y : x).name; // NOTE: here .name is outside of the reduce. If inside reduce will cause that when the arr is only size one, it directly returns the first Object.
+console.log(r);
+```
+
 use `reduce` to find the maximum
 ```python
 from functools import reduce
@@ -566,12 +573,371 @@ https://stackoverflow.com/questions/496321/utf-8-utf-16-and-utf-32
 - `codePointAt` method, added later, does give a full Unicode character.
 
 
+### Flat Array
 
+In Python, `[y for x in arr for y in x]`
 
+In JS, see [Ref](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
 
+```js
+let arrays = [[1, 2, 3], [4, 5], [6]];
+let r = arrays.reduce((x,y) => x.concat(y));
+let r2 = arrays.flat();
+console.log(r);
+console.log(r2);
+```
 
+## Chapter 6. The Secret Life of Objects
 
+### Encapsulation
 
+- The core idea in object-oriented programming is to divide programs into smaller pieces and make each piece responsible for managing its own state.
+
+### Methods
+
+Methods are nothing more than properties that hold function values.
+
+When a function is called as a method—looked up as a property and immediately called, as in `object.method()`—the binding called `this` in its body automatically points at the object that it was called on.
+
+Note the difference between the function defined with `function` keyword & Arrow function
+```js
+let func = x => console.log(`${this.foo} is ${x}`);
+func(1);
+let obj = {foo:'obj-1', func};
+obj.func(1); 
+func = function(x) { console.log(`${this.foo} is ${x}`) };
+func(1);
+obj = {foo:'obj-1', func};
+obj.func(1);
+// undefined is 1
+// undefined is 1
+// undefined is 1
+// obj-1 is 1
+```
+
+- For normal function, each function has it own `this` binding (whose value depends on the way it is called); and it cannot refer to the `this` of the **wrapping scope**
+- While for arrow function, they don't bind their own `this` but can see `this` binding of the scope around them.
+
+```js
+function normalize() {
+  console.log(this.coords.map(n => n / this.length));
+}
+normalize.call({coords: [0, 2, 3], length: 5});
+// → [0, 0.4, 0.6]
+```
+
+#### More about normal function and arrow function
+
+[MDN Ref](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+```js
+var elements = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium'
+];
+
+// When the only statement in an arrow function is `return`, we can remove `return` and remove
+// the surrounding curly brackets
+elements.map(element => element.length); // [8, 6, 7, 9]
+
+elements.map(({ length }) => length); // [8, 6, 7, 9]
+```
+
+Conclusion from [this](https://www.codementor.io/dariogarciamoya/understanding-this-in-javascript-with-arrow-functions-gcpjwfyuc):
+
+> arrow functions are the best choice when working with closures or callbacks, but not a good choice when working with class/object methods or constructors.
+
+### Prototypes
+
+In addition to objects' set of properties, most objects also have a *prototype*. A *prototype* is another object that is used as a fallback source of properties.
+
+- `toString()` method returns a string representing the object.
+  + like `__str__()` in Python
+  + `Object.prototype.toString()`
+  ```js
+  function Dog(name) {
+    this.name = name;
+  }
+  var dog1 = new Dog('Gabby');
+  Dog.prototype.toString = function dogToString() {
+    return '' + this.name;
+  }
+  console.log(dog1.toString());
+  // expected output: "Gabby"
+  ```
+- `Object.getPrototypeOf()` method returns the prototype (i.e. the value of the internal `[[Prototype]]` property) of the specified object.
+  ```js
+  console.log(Object.getPrototypeOf(Math.max) ==
+              Function.prototype); // -> true
+  console.log(Object.getPrototypeOf(Math) == Object.prototype);  // -> true
+  console.log(Object.getPrototypeOf([]) ==
+              Array.prototype);  // -> true
+  ```
+
+- 这里注意: `Object.prototype.toString()` 和   `Object.getPrototyeOf()` 在使用时的区别.
+- `Object.create()` method creates a new object, using an existing object as the prototype of the newly created object.
+  + `Object.create(proto, [propertiesObject])`
+  ```js
+  let protoRabbit = {
+      speak(line) {
+      console.log(`The ${this.type} rabbit says '${line}'`);
+    }
+  };
+  let killerRabbit = Object.create(protoRabbit);
+  console.log(Object.getPrototypeOf(killerRabbit) === protoRabbit);
+  killerRabbit.type = "killer";
+  killerRabbit.speak("SKREEEE!");
+  // → The killer rabbit says 'SKREEEE!'
+  ```
+
+### Classes
+
+```js
+let protoRabbit = {
+  speak(line) {
+    console.log(`The ${this.type} rabbit says '${line}'`);
+  }
+};
+function makeRabbit(type) {
+  let rabbit = Object.create(protoRabbit);
+  rabbit.type = type;
+  return rabbit;
+}
+let weirdRabbit = makeRabbit("weird");
+console.log(weirdRabbit);
+console.log(typeof weirdRabbit);
+weirdRabbit.speak('haha');
+/*
+{type: "weird"}
+object
+The weird rabbit says 'haha'
+*/
+```
+
+use `new`
+
+```js
+function Rabbit(type) {
+  this.type = type;
+}
+Rabbit.prototype.speak = function(line) {
+  console.log(`The ${this.type} rabbit says '${line}'`);
+};
+
+let weirdRabbit = new Rabbit("weird");
+console.log(weirdRabbit);
+console.log(typeof weirdRabbit);
+weirdRabbit.speak('haha');
+/*
+Rabbit{type: "weird"}
+object
+The weird rabbit says 'haha'
+*/
+```
+
+- distinction between the way a prototype is associated with a **constructor** (through its `prototype` property) and the way objects have a prototype (which can be found with `Object.getPrototypeOf`). The actual prototype of a constructor is Function.prototype since constructors are functions.Its prototype property holds the prototype used for instances created through it.
+
+```js
+console.log(Object.getPrototypeOf(Rabbit) ==
+            Function.prototype);
+// → true
+console.log(Object.getPrototypeOf(weirdRabbit) ==
+            Rabbit.prototype);
+// → true
+```
+
+- `getPrototypeOf()` very like `type()` in Python
+
+### Class Notation
+
+- **`constructor()`** is `__init__()` in python
+
+```js
+class Rabbit {
+  constructor(type) {
+    this.type = type;
+  }
+  speak(line) {
+    console.log(`The ${this.type} rabbit says '${line}'`);
+  }
+}
+
+let killerRabbit = new Rabbit("killer");
+let blackRabbit = new Rabbit("black");
+```
+
+- Class declarations currently allow only *methods*—properties that hold functions—to be added to the prototype. [TODO]
+
+### Overriding derived properties
+
+```js
+console.log([1, 2].toString());
+console.log(Array.prototype.toString.call([1,2]));
+```
+
+### Maps
+
+- `let dct = new Map();`
+- The methods `set`, `get`, and `has` are part of the interface of the Map object.
+- `keys()` method returns a new `Iterator` object that contains the keys for each element in the Map object in insertion order. The same for `values()`
+  ```js
+  var map1 = new Map();
+
+  map1.set('0', 'foo');
+  map1.set(0, 'bar');
+
+  var iterator1 = map1.keys();
+  let a = iterator1.next().value;
+  let b = iterator1.next().value;
+  console.log(a);
+  console.log(b);
+  console.log(a===b);
+  console.log("1"==1);
+  /*
+  > "0"
+  > 0
+  > false
+  > true
+  */
+  ```
+
+#### Compare with Object
+
+Note for Object, the difference between `in` and `hasOwnPorperty()`
+```js
+let obj = {x:1};
+console.log(obj.hasOwnProperty("x"));
+console.log("x" in obj);
+console.log(obj.hasOwnProperty("toString"));
+console.log("toString" in obj);
+console.log(Object.keys(obj));
+console.log(Object.values(obj));
+delete obj.x; // delete 
+/*
+true
+true
+false
+true
+["x"]
+[1]
+*/
+```
+
+while For Map
+
+```js
+console.log(dct.has("x"));
+let dct = new Map([["x",1]]); // note: how to give initialize it during declaration
+console.log(dct.has("x"));
+console.log(Array.from(dct.keys())); // note: Array.from()
+console.log(Array.from(dct.values())); // note: Array.from()
+dct.delete("x") // delete
+```
+#### Polymorphism
+
+```js
+Rabbit.prototype.toString = function() {
+  return `a ${this.type} rabbit`;
+};
+console.log(String(blackRabbit));
+// → a black rabbit
+```
+### Symbols
+
+- property names are strings, and can also be symbols. Symbols are values created with the Symbol function. 
+- Unlike strings, newly created symbols are unique—you cannot create the same symbol twice.
+
+```js
+let sym = Symbol("name");
+console.log(sym == Symbol("name"));
+// → false
+Rabbit.prototype[sym] = 55;
+console.log(blackRabbit[sym]);
+// → 55
+```
+
+### The iterator interface
+
+**Iterable Object** has a method named with the `Symbol.iterator` symbol (a symbol value defined by the language, stored as a property of the `Symbol` function).
+
+Note that the 
+- `next`, `value`, and `done` property names are plain strings, not symbols. 
+- Only `Symbol.iterator` is an actual symbol.
+
+```js
+let okIterator = "OK"[Symbol.iterator]();
+console.log(okIterator.next());
+// → {value: "O", done: false}
+console.log(okIterator.next());
+// → {value: "K", done: false}
+console.log(okIterator.next());
+// → {value: undefined, done: true}
+```
+
+iterator has a `next()` method which returns an object with two properties: `value`, the next value in the sequence; and `done`, which is true if the last value in the sequence has already been consumed. If `value` is present alongside `done`, it is the iterator's return value.
+
+- if not end of iteration, `next()` should return `{value, done: false}`
+- when the end, return `{done: true}`
+
+More info about (**iterator**)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators]
+
+### Getters, setters, and statics
+
+```js
+class Temperature {
+  constructor(celsius) {
+    this.celsius = celsius;
+  }
+  get fahrenheit() {
+    return this.celsius * 1.8 + 32;
+  }
+  set fahrenheit(value) {
+    this.celsius = (value - 32) / 1.8;
+  }
+
+  static fromFahrenheit(value) {
+    return new Temperature((value - 32) / 1.8);
+  }
+}
+
+let temp = new Temperature(22);
+console.log(temp.fahrenheit); // → 71.6
+temp.fahrenheit = 86;
+console.log(temp.celsius);  // → 30
+let temp2 = Temperature.fromFahrenheit(71.6);
+console.log(temp, temp2);  // → {celsius: 30} {celsius: 21.999999999999996}
+console.log(temp2.celsius);  // → 21.999999999999996
+```
+
+- `get` is `@property` in python
+- `set` is `@getter_func_name.setter` in python
+- `static`
+  + The `static` keyword defines a static method for a class. Static methods aren't called on instances of the class. Instead, they're called on the class itself. These are often utility functions, such as functions to create or clone objects.
+
+### Inheritance
+
+```js
+class Child extends Parent {
+  constructor(x) {
+    super(x, x);
+  }
+
+  set(x,value) {
+    super.set(x, value);
+  }
+}
+```
+
+- `extends`
+- `super`
+
+### The instanceof operator
+
+Almost every object is an instance of `Object`
+
+`console.log([1] instanceof Array); // true`
 
 
 
