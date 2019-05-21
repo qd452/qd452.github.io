@@ -589,6 +589,8 @@ console.log(r2);
 
 ## Chapter 6. The Secret Life of Objects
 
+**Note that in javascript, just about everything is an `Object`, including `Array`s and `Function`s**
+
 ### Encapsulation
 
 - The core idea in object-oriented programming is to divide programs into smaller pieces and make each piece responsible for managing its own state.
@@ -626,6 +628,25 @@ normalize.call({coords: [0, 2, 3], length: 5});
 // → [0, 0.4, 0.6]
 ```
 
+#### More about **`this`** in JS
+
+[Ref](https://stackoverflow.com/posts/26574449/edit)
+
+- Simple function invocation
+  + in normal mode, which the strict mode is not used
+    * In browser, value of `this` would be logged as `window`. This is because `window` is the global variable in a web browser's scope.
+    * In node.js, `this` would refer to the global variable in your app.
+  + in strict mode by adding `"use strict"`
+    * `this` would be `undefined`, because it is what it is, its not defined
+- Calling a function on an Object, just like the above code
+  ```js
+  let obj = {foo: 'obj'};
+  obj.func = function(x) {console.log(`${this.foo} is ${x}`)}
+  obj.func('foo'); // -> obj is foo
+  ```
+- The **`new`** keyword
+  + 
+
 #### More about normal function and arrow function
 
 [MDN Ref](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
@@ -652,6 +673,11 @@ Conclusion from [this](https://www.codementor.io/dariogarciamoya/understanding-t
 ### Prototypes
 
 In addition to objects' set of properties, most objects also have a *prototype*. A *prototype* is another object that is used as a fallback source of properties.
+
+```js
+console.log(Object.getPrototypeOf({}) ==
+            Object.prototype);  // → true
+```
 
 - `toString()` method returns a string representing the object.
   + like `__str__()` in Python
@@ -716,7 +742,8 @@ The weird rabbit says 'haha'
 */
 ```
 
-use `new`
+- use **`new`**
+  + put the keyword `new` in front of a function call, the function is treated as a constructor. This means that an object with the right prototype is automatically created, bound to `this` in the function, and returned at the end of the function.
 
 ```js
 function Rabbit(type) {
@@ -752,7 +779,11 @@ console.log(Object.getPrototypeOf(weirdRabbit) ==
 
 ### Class Notation
 
+**JavaScript classes are constructor functions(just like above `Rabbit`) with a prototype property (`Rabbit.prototype`).**
+
 - **`constructor()`** is `__init__()` in python
+- `constructor` is the actual **constructor function**, which will be bound to the name Rabbit. (just like above `Rabbit` constructor function)
+- The others are packaged into that constructor’s **prototype**. (just like above `Rabbit.prototype.speak`)
 
 ```js
 class Rabbit {
@@ -768,7 +799,13 @@ let killerRabbit = new Rabbit("killer");
 let blackRabbit = new Rabbit("black");
 ```
 
-- Class declarations currently allow only *methods*—properties that hold functions—to be added to the prototype. [TODO]
+- Class declarations currently allow only *methods*—properties that hold functions—to be added to the prototype. 我认为这里的意思是只能在class里面定义function， 不能像python一样定义class variable
+  ```python
+  class Foo:
+    v = 1 # value shared across all class instances
+    def __init__(self):
+      self.x = 1
+  ```
 
 ### Overriding derived properties
 
