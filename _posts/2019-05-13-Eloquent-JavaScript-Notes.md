@@ -2,13 +2,19 @@
 layout: post
 title:  "Eloquent JavaScript Notes"
 date:   2019-05-13 23:58 +0800
-catalog: true
+catalog: false
 tags: 
   - JavaScript 
   - notes 
   - JS 
 ---
 
+## Table of Contents
+
+{:.no_toc}
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
 
 ## Chapter 1. Values, Types, and Operators
 
