@@ -139,12 +139,17 @@ INSERT INTO `student` (`id`, `name`, `age`, `sex`, `department`) VALUES ('14', '
 
 #### 1. select SNO where all module pass
 ```sql
-SELECT sno FROM sc GROUP BY sno HAVING MIN(grade>=60);
+SELECT sno 
+FROM sc 
+GROUP BY sno HAVING MIN(grade>=60);
 ```
 
 #### 2. select sno where has module < 60 and module >90
 ```sql
-SELECT id FROM class WHERE grade<60 AND id IN (SELECT id FROM class WHERE grade>90);
+SELECT id 
+FROM class 
+WHERE grade<60 
+AND id IN (SELECT id FROM class WHERE grade>90);
 ```
 
 #### 3. select cno, avg_grade where avg grade <60
@@ -159,23 +164,33 @@ SELECT (SELECT cno FROM sc WHERE sno=2);
 
 #### 5. every module avg after remove highest and lowest
 ```sql
-SELECT subject, AVG(grade) FROM class WHERE grade != (SELECT grade FROM class ORDER BY grade ASC LIMIT 1) and grade !=(SELECT grade FROM class ORDER BY grade DESC LIMIT 1) GROUP BY subject;
+SELECT subject, AVG(grade) 
+FROM class 
+WHERE grade != (SELECT grade FROM class ORDER BY grade ASC LIMIT 1) 
+AND grade !=(SELECT grade FROM class ORDER BY grade DESC LIMIT 1) 
+GROUP BY subject;
 ```
 
 #### 6. select students who do not take module 3
 ```sql
-SELECT DISTINCT(id) FROM class WHERE id NOT IN (SELECT id FROM class WHERE subject=3);
+SELECT DISTINCT(id) 
+FROM class 
+WHERE id NOT IN (SELECT id FROM class WHERE subject=3);
 ```
 
 #### 7. select students whose 'math' >90 or <60
 ```sql
-SELECT DISTINCT(id) FROM class WHERE subject='math' AND grade NOT BETWEEN 60 AND 90;
+SELECT DISTINCT(id) 
+FROM class 
+WHERE subject='math' AND grade NOT BETWEEN 60 AND 90;
 ```
 
 #### 8. query subject and number of student who took it
 ```sql
-SELECT subject, COUNT(*) as Num_Student FROM `class` GROUP BY subject;
-SELECT subject, COUNT(id) as Num_Student FROM `class` GROUP BY subject;
+SELECT subject, COUNT(*) as Num_Student 
+FROM `class` GROUP BY subject;
+SELECT subject, COUNT(id) as Num_Student 
+FROM `class` GROUP BY subject;
 ```
 
 #### 9. query student id, name, sex who took module num 3
@@ -184,17 +199,23 @@ SELECT student.id, student.name, student.sex
 FROM class LEFT JOIN student ON student.id = class.id 
 WHERE class.subject = 3;
 -- OR
-SELECT student.id, name, sex FROM student, class WHERE student.id = class.id AND class.subject = 3;
+SELECT student.id, name, sex 
+FROM student, class 
+WHERE student.id = class.id AND class.subject = 3;
 ```
 
 #### 10. average age of students who took module num 3
 ```sql
-SELECT AVG(age) FROM student, class WHERE student.id = class.id AND class.subject = 3;
+SELECT AVG(age) 
+FROM student, class 
+WHERE student.id = class.id AND class.subject = 3;
 ```
 
 #### 11. average age of students who took module num 3
 ```sql
-SELECT AVG(age) FROM student, class WHERE student.id = class.id AND class.subject = 3;
+SELECT AVG(age) 
+FROM student, class 
+WHERE student.id = class.id AND class.subject = 3;
 ```
 
 #### 12. Many more
@@ -251,10 +272,15 @@ WHERE NOT EXISTS
 -- TODO: EXISTS: https://dev.mysql.com/doc/refman/8.0/en/exists-and-not-exists-subqueries.html
 
 -- select female student who took math and failed <35
-SELECT student.id, student.name, student.sex FROM student, class, module WHERE module.id=class.subject AND module.name='math' AND class.id=student.id AND student.sex='F' and class.grade<35;
+SELECT student.id, student.name, student.sex 
+FROM student, class, module 
+WHERE module.id=class.subject AND module.name='math' 
+AND class.id=student.id 
+AND student.sex='F' and class.grade<35;
 
 -- query module name and avg grade for every module
-SELECT module.name, AVG(class.grade) as AVG_grade FROM module LEFT JOIN class ON module.id=class.subject
+SELECT module.name, AVG(class.grade) as AVG_grade 
+FROM module LEFT JOIN class ON module.id=class.subject
 GROUP BY module.name
 ORDER BY AVG_grade ASC;
 -- OR
@@ -324,8 +350,119 @@ SELECT
 FROM executions
 GROUP BY county
 ORDER BY percentage DESC
+
+-- Look up the documentation to fix the query so that it returns the number of days between the dates.
+-- https://www.sqlite.org/lang_datefunc.html
+SELECT JULIANDAY('1993-08-10') - 
+JULIANDAY('1989-07-07') AS day_difference
 ```
 
+**start**|**end**|**day_difference**
+:-----:|:-----:|:-----:
+1982-12-07|1984-03-14|463
+1988-01-07|1988-11-03|301
+2007-09-25|2008-06-11|260
+```sql
+-- generate above table
+SELECT
+  last_ex_date AS start,
+  ex_date AS end,
+  JULIANDAY(ex_date) - JULIANDAY(last_ex_date) AS day_difference
+FROM executions
+JOIN (
+    SELECT
+      ex_number + 1 AS ex_number,
+      ex_date AS last_ex_date
+    FROM executions
+  ) previous
+  ON executions.ex_number = previous.ex_number
+ORDER BY day_difference DESC
+LIMIT 10
+
+-- More Elegant
+SELECT
+  previous.ex_date AS start,
+  executions.ex_date AS end,
+  JULIANDAY(executions.ex_date) - JULIANDAY(previous.ex_date)
+    AS day_difference
+FROM executions
+JOIN executions previous
+  ON executions.ex_number = previous.ex_number+1
+ORDER BY day_difference DESC
+LIMIT 10
+
+```
+
+
+```sql
+--Find the most networked senator. That is, the one with the most mutual cosponsorships.
+WITH mutuals AS 
+(SELECT DISTINCT a.sponsor_name, a.cosponsor_name
+FROM cosponsors a
+JOIN cosponsors b
+ON a.cosponsor_name = b.sponsor_name
+WHERE a.sponsor_name = b.cosponsor_name)
+
+SELECT sponsor_name, COUNT(*)
+FROM mutuals
+GROUP BY sponsor_name
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+
+-- Now find the most networked senator from each state.
+WITH mutual_counts AS (
+  SELECT
+    senator, state, COUNT(*) AS mutual_count
+  FROM (
+    SELECT DISTINCT
+      c1.sponsor_name AS senator,
+      c1.sponsor_state AS state,
+      c2.sponsor_name AS senator2
+    FROM cosponsors c1
+    JOIN cosponsors c2
+      ON c1.sponsor_name = c2.cosponsor_name
+      AND c2.sponsor_name = c1.cosponsor_name
+    )
+  GROUP BY senator, state
+),
+
+state_max AS (
+  SELECT
+    state,
+    MAX(mutual_count) AS max_mutual_count
+  FROM mutual_counts
+  GROUP BY state
+)
+
+SELECT
+  mutual_counts.state,
+  mutual_counts.senator,
+  mutual_counts.mutual_count
+FROM mutual_counts
+JOIN state_max
+  ON mutual_counts.state = state_max.state
+  AND mutual_counts.mutual_count = state_max.max_mutual_count
+
+
+-- Find the senators who cosponsored but didn't sponsor bills.
+SELECT DISTINCT cosponsor_name
+FROM cosponsors
+WHERE
+cosponsor_name NOT IN
+(SELECT DISTINCT sponsor_name
+FROM cosponsors)
+-- MORE efficient way
+SELECT DISTINCT c1.cosponsor_name
+FROM cosponsors c1
+LEFT JOIN cosponsors c2
+ ON c1.cosponsor_name = c2.sponsor_name
+ -- This join identifies cosponsors
+ -- who have sponsored bills
+WHERE c2.sponsor_name IS NULL
+-- LEFT JOIN + NULL is a standard trick for excluding
+-- rows. It's more efficient than WHERE ... NOT IN.
+
+```
 
 
 
