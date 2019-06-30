@@ -67,6 +67,26 @@ reference_option:
 
 [foreign key example](https://dev.mysql.com/doc/mysql-tutorial-excerpt/5.7/en/example-foreign-keys.html)
 
+[Does MySQL index foreign key columns automatically?
+](https://stackoverflow.com/questions/304317/does-mysql-index-foreign-key-columns-automatically) -> **YES** for `InnoDB`
+
+`owner SMALLINT UNSIGNED NOT NULL REFERENCES person(id),`
+
+```sql
+CREATE TABLE parent (
+    id INT NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+CREATE TABLE child (
+    id INT,
+    parent_id INT,
+    INDEX par_ind (parent_id),
+    FOREIGN KEY (parent_id)
+        REFERENCES parent(id)
+        ON DELETE CASCADE
+) ENGINE=INNODB;
+```
 ---
 
 ## SQL Recap
