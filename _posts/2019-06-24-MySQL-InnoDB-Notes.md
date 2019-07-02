@@ -63,19 +63,66 @@ TO allow AHI:
 - An intention exclusive lock (IX) indicates that a transaction intends to set an exclusive lock on individual rows in a table.
 
 
-#### Record Lock 
+#### Record Lock - single row lock
 
 A record lock is a lock on an **index record**. For example, `SELECT c1 FROM t WHERE c1 = 10 FOR UPDATE`; prevents any other transaction from inserting, updating, or deleting rows where the value of `t.c1` is `10`.
 
-#### Gap Lock
+#### Gap Lock - a range, but exclude records themselves
 
 A gap lock is a lock on a gap between index records, or a lock on the gap before the first or after the last index record. For example, `SELECT c1 FROM t WHERE c1 BETWEEN 10 and 20 FOR UPDATE`; prevents other transactions from inserting a value of `15` into column `t.c1`, whether or not there was already any such value in the column, because the gaps between all existing values in the range are locked.
 
 [TODO](https://dev.mysql.com/doc/refman/5.5/en/innodb-locking.html#innodb-gap-locks)
 
-#### Next-Key Lock
+#### Next-Key Lock - lock range and the record
 
-TODO
+next-key 是因为它是右面闭区间， `(]`; 对应的，有previous-key lock, 是 `[)`
+
+当index record是unique的时候，next-key lock 自动降级成 record lock
+
+```sql
+CREATE TABLE t (a INT PRIMARY KEY);
+INSERT INTO t SELECT 1;
+INSERT INTO t SELECT 2;
+INSERT INTO t SELECT 5;
+```
+
+此时在事务A中，`SELECT * FROM t WHERE t=2 FOR UPDATE`但是不commit. 与此同时另一个事务B开始`INSERT INTO t SELECT 4`并不会阻塞。因为t是主键，所以lock已经降级为record lock。
+
+下面来看next-key lock的一般情况
+```sql
+CREATE TABLE t (a INT, b INT, PRIMARY KEY(a), KEY(b));
+INSERT INTO t SELECT 1, 1;
+INSERT INTO t SELECT 3, 1;
+INSERT INTO t SELECT 5, 3;
+INSERT INTO t SELECT 7, 6;
+INSERT INTO t SELECT 10,8;
+```
+
+此时在事务A中，`SELECT * FROM t WHERE b=3 FOR UPDATE`. 这一行有两个索引(a=5, b=3)，分别锁定。对于聚集索引，加Record Lock。对于辅助索引，先加next-key lock,是 `(1,3]`,InnoDB还会对辅助索引下一个键值加一个Gap Lock,是`(3,6)`.所以最终锁住的范围是`(1,6)`。
+
+所以如果此时在事务B中，以下三种均会被堵塞
+
+```sql
+SELECT * FROM t WHERE a=5 FOR SHARE; -- 5 already been X locked
+INSERT INTO t SELECT 4,2; -- 2 within range(3,6)
+INSERT INTO t SELECT 6,5; -- 5 within range(3,6)
+```
+
+#### 事务的四种隔离级别<sup>[4]</sup>
+
+| 隔离级别 | 脏读（Dirty Read） | 不可重复读（NonRepeatable Read） | 幻读（Phantom Read） |
+|----------------|----------|------------|-------------|
+| 未提交读（Read uncommitted） | 可能 | 可能 | 可能 |
+| 已提交读（Read committed） | 不可能 | 可能 | 可能 |
+| 可重复读（Repeatable read） | 不可能 | 不可能 | 可能 |
+| 可串行化（Serializable ） | 不可能 | 不可能 | 不可能 |
+
+- Repeatable read - use Next-key Locking
+- Read committed - use Record Locking
+- Dirty Read - Read uncommitted data from another transaction
+- NonRepeatable Read
+    + Occurs under Read committed LEVEL, because this level always read fresh snapshot
+
 
 ### Consistent Nonblocking Read (一致性非锁定读)
 
@@ -94,15 +141,15 @@ Currently the row want to read is X locked (DELECT or UPDATE), read from snapsho
 | COMMIT; |  |
                                                                
 - For Repeatable Read, all reads within the same transaction read the snapshot established by the first such read in that transaction. 每次读都根据第一次读到的snapshot
-- For Read commited, always read a new fresh snapshot. 每次都读最新的snapshot
+- For Read committed, always read a new fresh snapshot. 每次都读最新的snapshot
 
 #### Locking Read
 
 If you query data and then insert or update related data within the same transaction, the regular `SELECT` statement does not give enough protection. Other transactions can update or delete the same rows you just queried
 
-- `SELECT ... FOR SHARE`
+- `SELECT ... FOR SHARE` - add S lock
     + if you want to insert a child for one certain parent; if you just select that parent and then insert child, its NOT safe; cause some other session could delete the parent row in the moment between your `SELECT` and your `INSERT`
-- `SELECT ... FOR UPDATE`
+- `SELECT ... FOR UPDATE` - add X lock
 
 #### AUTO-INC Locking
 
@@ -119,6 +166,7 @@ An AUTO-INC lock is a special **table-level** lock taken by transactions inserti
 [1]: https://www.geeksforgeeks.org/sql-ddl-dml-dcl-tcl-commands/
 [2]: https://www.percona.com/blog/2009/01/13/some-little-known-facts-about-innodb-insert-buffer/
 [3]: https://dev.mysql.com/doc/refman/5.5/en/innodb-locking.html
+[4]: https://tech.meituan.com/2014/08/20/innodb-lock.html
 
 
 
