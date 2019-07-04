@@ -486,6 +486,64 @@ WHERE c2.sponsor_name IS NULL
 
 ```
 
+## 一道SQL题
+现有注册用户表table_user，有两个字段：user_id(用户id)、reg_tm(注册时间)。有订单表table_order,有三个字段：order_id(订单号)、order_tm(下单时间)、user_id(用户id)。
+
+查询2019年1月1日至今，每天的注册用户数，下单用户数，以及注册当天即下单的用户数（请尽量在一个 sql语句中实现）。
+
+```sql
+CREATE TABLE IF NOT EXISTS tb_user 
+(
+    user_id INT NOT NULL, 
+    reg_tm DATE NOT NULL
+ );
+
+INSERT INTO tb_user VALUES (1, '2019-1-1');
+INSERT INTO tb_user VALUES (2, '2019-1-1');
+INSERT INTO tb_user VALUES (3, '2019-1-1');
+INSERT INTO tb_user VALUES (4, '2019-1-2');
+INSERT INTO tb_user VALUES (5, '2019-1-2');
+INSERT INTO tb_user VALUES (6, '2019-1-4');
+INSERT INTO tb_user VALUES (7, '2019-1-5');
+
+CREATE TABLE IF NOT EXISTS tb_order
+(
+    order_id VARCHAR(3) NOT NULL,
+    order_tm DATE NOT NULL,
+    user_id INT NOT NULL
+);
+INSERT INTO tb_order VALUES (1, '2019-1-1', 1);
+INSERT INTO tb_order VALUES (2, '2019-1-1', 2);
+INSERT INTO tb_order VALUES (3, '2019-1-2', 3);
+INSERT INTO tb_order VALUES (4, '2019-1-2', 3);
+INSERT INTO tb_order VALUES (5, '2019-1-2', 4);
+INSERT INTO tb_order VALUES (6, '2019-1-3', 5);
+INSERT INTO tb_order VALUES (7, '2019-1-5', 6);
+INSERT INTO tb_order VALUES (7, '2019-1-6', 7);
+INSERT INTO tb_order VALUES (7, '2019-1-6', 7);
+```
+
+- mysql doesn't have `FULL OUTER JOIN`, so here use `UNION`
+
+
+```sql
+SELECT 
+tb_date.reg_tm as date,
+COUNT(DISTINCT tb_user.user_id) as dailyRegiUserAmount,
+COUNT(DISTINCT tb_order.user_id) as dailyOrderUserAmount,
+COUNT(DISTINCT
+    IF(tb_user.user_id=tb_order.user_id AND 
+       tb_user.reg_tm=tb_order.order_tm, tb_user.user_id, NULL)
+      ) as userOrderWhenJustRegister
+FROM (SELECT reg_tm FROM tb_user
+UNION
+SELECT order_tm FROM tb_order
+ORDER BY reg_tm) as tb_date
+LEFT JOIN tb_user ON tb_date.reg_tm=tb_user.reg_tm
+LEFT JOIN tb_order ON tb_date.reg_tm=tb_order.order_tm
+WHERE tb_date.reg_tm>'2018-12-31'
+GROUP BY tb_date.reg_tm;
+```
 
 
 [1]: https://dev.mysql.com/doc/refman/5.5/en/range-optimization.html
